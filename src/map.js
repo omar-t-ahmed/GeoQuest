@@ -17,5 +17,8 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json', (error
         .enter()
         .append('path')
         .attr('class', 'country')
-        .attr('d', path);
+        .attr('d', path)
+        .attr('name', d => d.properties.name);
 });
+
+
