@@ -1,11 +1,15 @@
 {
-  "name": "flagrover",
+  "name": "geoquest",
   "version": "1.0.0",
   "description": "An interactive map of the world!",
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "start": "webpack --watch --mode=development",
     "build": "webpack --mode=production"
   },
+  
   "keywords": [],
   "author": "Omar",
   "license": "ISC",
@@ -13,6 +17,7 @@
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   },
+  
   "dependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
@@ -24,5 +29,14 @@
     "regenerator-runtime": "^0.14.0",
     "sass": "^1.69.4",
     "sass-loader": "^13.3.2"
-  }
+  },
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omar-t-ahmed/GeoQuest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omar-t-ahmed/GeoQuest/issues"
+  },
+  "homepage": "https://github.com/omar-t-ahmed/GeoQuest#readme"
 }

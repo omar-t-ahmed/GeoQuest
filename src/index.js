@@ -1,3 +1,6 @@
+import Map from "./scripts/map"
+
 addEventListener("DOMContentLoaded", () => {
-    console.log('webpack working')
+    const map = document.getElementById('map')
+    new Map(map)
 })
