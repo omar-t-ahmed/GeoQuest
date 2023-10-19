@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(49, 49, 49);
+    margin:0%
+}
+.country {
+    fill: rgb(0, 0, 0);
+    stroke: blanchedalmond;
+    stroke-width: 1;
+    animation: glow 2s linear infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        stroke: blanchedalmond;
+    }
+    100% {
+        stroke: #ffcc00;
+    }
+}
+
+#map {
+    margin-top: 5vw;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(49, 49, 49);
+}
+
+.country:hover {
+    fill: orange;
+}
