@@ -2,7 +2,7 @@
 .country {
     fill: rgb(0, 0, 0);
     stroke: blanchedalmond;
-    stroke-width: 1;
+    stroke-width: 0.8;
     animation: glow 2s linear infinite alternate;
 }
 
@@ -16,7 +16,6 @@
 }
 
 #map {
-    margin-top: 5vw;
     display: flex;
     justify-content: center;
     background-color: rgb(49, 49, 49);
