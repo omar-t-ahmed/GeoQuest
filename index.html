@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/main.css" />
-    <script src='https://d3js.org/d3.v4.min.js'></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">    
+    <script src='https://d3js.org/d3.v6.min.js'></script>
     <script src="https://unpkg.com/topojson@3"></script>
     <script type="application/javascript" src="dist/main.js" defer></script>
     <title>GeoQuest</title>
 </head>
 
 <body>
-    <h3 id="country-name"></h3>
+    <h3 id="country-name">Select a Country</h3>
     <div id="map"></div>
+    <div id="country-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">Return to Map</span>
+            <h2 id="modal-country-name"></h2>
+            <p id="modal-country-info"></p>
+        </div>
+    </div>
 </body>
 </html>
