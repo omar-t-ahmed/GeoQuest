@@ -8,7 +8,7 @@ class Globe {
         this.width = d3.select(selector).node().getBoundingClientRect().width;
         this.height = 500;
         this.sensitivity = 75;
-
+        
         this.projection = d3.geoOrthographic()
             .scale(250)
             .center([0, 0])
@@ -30,21 +30,6 @@ class Globe {
             .attr("cx", this.width / 2)
             .attr("cy", this.height / 2)
             .attr("r", this.initialScale);
-
-    // const handleZoom = (event) => {
-    //     if (!event.sourceEvent) return;
-    //     if (event.sourceEvent.type === "wheel") {
-    //     event.sourceEvent.preventDefault();
-    //     }
-    //     if (event.transform.k > 0.3) {
-    //     this.projection.scale(this.initialScale * event.transform.k);
-    //     this.path = d3.geoPath().projection(this.projection);
-    //     this.map.selectAll("path").attr("d", this.path);
-    //     this.globe.attr("r", this.projection.scale());
-    //     } else {
-    //     event.transform.k = 0.3;
-    //     }
-    // };
 
     const handleDrag = (event) => {
         if (!event.sourceEvent) return;
@@ -68,8 +53,7 @@ class Globe {
     );
 
         this.map = this.svg.append("g");
-
-
+        
         this.rotationHandler = new RotationHandler(this.projection, this.sensitivity, this.svg, this.path);
         this.modalHandler = new ModalHandler();
         this.eventListeners = new EventListeners(this.svg, this.modalHandler);
@@ -88,7 +72,7 @@ class Globe {
                 .attr("d", this.path)
                 .attr("name", (d) => d.properties.name);
         } catch (error) {
-            console.error('Failed to load map data:', error);
+            console.error('Failed to load globe data:', error);
         }
     }
 

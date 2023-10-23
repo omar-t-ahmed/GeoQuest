@@ -1,3 +1,5 @@
+import ModalHandler from "./modal_handler";
+
 class EventListeners {
     constructor(svg, modalHandler) {
         this.svg = svg;

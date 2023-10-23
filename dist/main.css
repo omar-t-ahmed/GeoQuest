@@ -39,7 +39,8 @@
     margin-left: 13vw;
     padding: 5px;
     height: 20px;
-    box-shadow: 5px 5px 1px 1px rgba(255, 216, 157, 0.733);
+    box-shadow: 5px 5px 1px 1px rgba(0, 0, 0, 0.733);
+    text-shadow: black 2px 3px;
     min-width: 40px; 
 }
 
@@ -58,6 +59,10 @@
     z-index: 1;
 }
 
+#modal-country-name {
+    color: white;
+}
+
 .modal-content {
     position: absolute;
     top: 50%;
@@ -66,21 +71,28 @@
     width: 50%;
     padding: 20px;
     background-color: #333; 
-    border: 2px solid #000; 
+    border: 2px solid blanchedalmond; 
     border-radius: 5px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
-    color: #fff;
+    color: blanchedalmond;
 }
-
 
 .close {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
-    color: #fff;
+    padding: 5px 10px;
+    color: blanchedalmond;
+    background-color: #555;
+    border: 2px solid blanchedalmond; 
+    border-radius: 5px;
+    margin-left: 5px;
+    text-decoration: none;
 }
+
+
 
 #map {
     filter: none;
