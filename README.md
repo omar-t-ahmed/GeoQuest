@@ -1,6 +1,6 @@
 # Background
 
-GeoQuest is a vanilla JS web application that renders an interactive world map. Users can click on a specific country on the map, and upon clicking, a modal window will appear displaying detailed information about that country. The information includes the country's population, flag, and the primary language spoken. This project aims to provide an engaging and educational experience, allowing users to explore and learn about different countries and their key statistics by interacting with the map. It serves as a user-friendly platform for accessing geographical and demographic data in an interactive and visually appealing manner.
+GeoQuest is a vanilla JS web application that renders an interactive globe. Users can click on a specific country on the globe, and upon clicking, a modal window will appear displaying detailed information about that country. The information includes the country's population, flag, and the primary language spoken. This project aims to provide an engaging and educational experience, allowing users to explore and learn about different countries and their key statistics by interacting with the map. It serves as a user-friendly platform for accessing geographical and demographic data in an interactive and visually appealing manner.
 
 # In GeoQuest, users will be able to:
 

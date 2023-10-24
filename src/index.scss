@@ -1,11 +1,12 @@
 @import url(styles/map.scss);
 @import url(styles/country_name_box.scss);
 @import url(styles/modal.scss);
+@import url(styles/navbar.scss);
 
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(49, 49, 49);
+    background: radial-gradient(circle, rgb(96, 96, 96), rgb(49, 49, 49));
     margin: 0%
 }

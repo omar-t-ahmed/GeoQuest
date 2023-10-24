@@ -32,6 +32,7 @@ class EventListeners {
             this.modalHandler.openModal(country);
         }
     }
+    
 }
 
 export default EventListeners;

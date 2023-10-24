@@ -21,26 +21,33 @@ class ModalHandler {
                 });
             this.name.innerHTML = country;
 
-
-            function filter(obj, predicate) {
-                return Object.keys(obj)
-                    .filter(key => predicate(obj[key]))
-                    .reduce((res, key) => {
-                        res[key] = obj[key];
-                        return res;
-                    }, {});
+            if (data.length > 1) {
+                let currentCountry = this.name.innerHTML
+                data.forEach((country, idx) => {
+                    if (country.name.common === currentCountry)  {
+                        data = [data[idx]]
+                    }
+                } )
             }
 
-            let filtered = filter((data[0], country => country.independent))
+            this.flag.src = data[0].flags.png;
 
-            console.log(filtered)
+            this.capital.innerHTML = `Capital: ${data[0].capital}`
 
-            this.capital.innerHTML = `Capital: ${filtered.capital}`
-
-            this.population.innerHTML = `Population: ${Math.floor(data[0].population / 1000000)} million`
+            if (data[0].population < 1000000 ) {
+                this.population.innerHTML = `Population: ${(data[0].population / 100).toFixed(1)} thousand`
+            } else if (data[0].population > 1000000 && data[0].population < 1000000000){
+                this.population.innerHTML = `Population: ${(data[0].population / 1000000).toFixed(1)} million`
+            } else {
+                this.population.innerHTML = `Population: ${(data[0].population / 1000000000).toFixed(1)} billion`
+            }
 
             const languages = Object.values(data[0].languages).join(', ')
-            this.languages.innerHTML = `Languages spoken: ${languages}`;
+            if (Object.values(data[0].languages).length > 1) {
+                this.languages.innerHTML = `Languages spoken: ${languages}`;
+            } else {
+                this.languages.innerHTML = `Native language: ${languages}`;
+            }
 
             // this.nativeName.innerHTML = `Native Name: ${data[0].name.nativeName.ara.common}`;
 

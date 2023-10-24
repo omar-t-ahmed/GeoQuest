@@ -8,7 +8,7 @@ class Globe {
         this.width = d3.select(selector).node().getBoundingClientRect().width;
         this.height = 500;
         this.sensitivity = 75;
-        
+
         this.projection = d3.geoOrthographic()
             .scale(250)
             .center([0, 0])
@@ -29,7 +29,7 @@ class Globe {
             .attr("stroke-width", "0.2")
             .attr("cx", this.width / 2)
             .attr("cy", this.height / 2)
-            .attr("r", this.initialScale);
+            .attr("r", this.initialScale)
 
     const handleDrag = (event) => {
         if (!event.sourceEvent) return;
@@ -51,15 +51,21 @@ class Globe {
         })
         .on('drag', handleDrag)
     );
+    
+    this.map = this.svg.append("g");
+    
+    this.rotationHandler = new RotationHandler(this.projection, this.sensitivity, this.svg, this.path);
+    this.modalHandler = new ModalHandler();
+    this.eventListeners = new EventListeners(this.svg, this.modalHandler);
+    this.loadData();
+    this.addEventListeners();
+    this.startRotation();
 
-        this.map = this.svg.append("g");
-        
-        this.rotationHandler = new RotationHandler(this.projection, this.sensitivity, this.svg, this.path);
-        this.modalHandler = new ModalHandler();
-        this.eventListeners = new EventListeners(this.svg, this.modalHandler);
-        this.loadData();
-        this.addEventListeners();
-        this.startRotation();
+    let pause = document.getElementById("pause")
+    pause.addEventListener("click", this.stopRotation.bind(this))
+
+    let play = document.getElementById("play")
+    play.addEventListener("click", this.startRotation.bind(this))
     }
 
     async loadData() {
@@ -88,6 +94,10 @@ class Globe {
 
     startRotation() {
         this.rotationHandler.startRotation();
+    }
+
+    stopRotation() {
+        this.rotationHandler.stopRotation();
     }
 }
 

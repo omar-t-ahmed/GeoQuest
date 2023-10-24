@@ -5,13 +5,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
 
 #modal-country-name {
     color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
+
 
 .modal-content {
     position: absolute;
@@ -20,12 +24,12 @@
     transform: translate(-50%, -50%);
     width: 50%;
     padding: 20px;
-    background-color: #333; 
-    border: 2px solid blanchedalmond; 
-    border-radius: 5px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #333;
+    border: 2px solid blanchedalmond;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     text-align: center;
-    color: blanchedalmond;
+    color: #ccc;
 }
 
 .close {
@@ -34,14 +38,47 @@
     right: 10px;
     cursor: pointer;
     padding: 5px 10px;
-    color: blanchedalmond;
+    color: #d8d8d8;
     background-color: #555;
-    border: 2px solid blanchedalmond; 
+    border: 2px solid black;
     border-radius: 5px;
-    margin-left: 5px;
     text-decoration: none;
+    font-weight: bold;
 }
 
+
+#flag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 10vw;
+    height: 10vh;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+h2#modal-country-name {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 18px;
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+/* Add some specific styles for the data paragraphs */
+p#native-name::before,
+p#capital::before,
+p#population::before,
+p#languages-spoken::before,
+p#region::before {
+    content: attr(data-title);
+    font-weight: normal;
+    margin-right: 5px;
+}
 
 
 #map {
