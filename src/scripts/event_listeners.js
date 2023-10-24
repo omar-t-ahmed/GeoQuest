@@ -28,11 +28,28 @@ class EventListeners {
     handleClick(event) {
         const target = event.target;
         if (target.classList.contains("country")) {
+            this.modalHandler.refresh()
             const country = target.getAttribute("name");
             this.modalHandler.openModal(country);
         }
     }
-    
+
+    animateParagraphs() {
+        const paragraphs = document.querySelectorAll('#country-info p');
+        let index = 0;
+        
+        function animateNextParagraph() {
+            if (index < paragraphs.length) {
+            paragraphs[index].classList.add('animate-p');
+            index++;
+        
+            setTimeout(animateNextParagraph, 4000); // Adjust the delay as needed
+            }
+        }
+        
+        animateNextParagraph();
+        }
+
 }
 
 export default EventListeners;

@@ -7,8 +7,11 @@ class RotationHandler {
         this.rotationInterval = null;
     }
 
-    startRotation() {
-        if (!this.rotationInterval) {
+    toggleRotation() {
+        if (this.rotationInterval) {
+            clearInterval(this.rotationInterval);
+            this.rotationInterval = null;
+        } else {
             this.rotationInterval = setInterval(() => {
                 const rotate = this.projection.rotate();
                 const k = this.sensitivity / this.projection.scale();
@@ -16,13 +19,6 @@ class RotationHandler {
                 this.path = d3.geoPath().projection(this.projection);
                 this.svg.selectAll("path").attr("d", this.path);
             }, 30);
-        }
-    }
-
-    stopRotation() {
-        if (this.rotationInterval) {
-            clearInterval(this.rotationInterval);
-            this.rotationInterval = null;
         }
     }
 }

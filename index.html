@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0080e2199b.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet"> 
     <script src='https://d3js.org/d3.v6.min.js'></script>
     <script src="https://unpkg.com/topojson@3"></script>
@@ -23,27 +23,28 @@
         </div>
         <ul>
             <li id="search-bar">
-                <label for="search">Find Country</label>
-                <input type="search" id="search">
+                <label for="search"><i class="fa-solid fa-magnifying-glass fa-lg"></i></label>
+                <!-- <input type="search" id="search"> -->
             </li>
-            <li id="pause">pause</li>
-            <li id="play">play</li>
-            <li><a href="https://github.com/omar-t-ahmed" target="_blank"><i class="fab fa-github fa-lg"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/omar-ahmed-205152224/" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a></li>
+            <li id="pause"><i class="fa-solid fa-pause fa-xl"></i></li>
+            <li><a href="https://github.com/omar-t-ahmed" target="_blank"><i class="fa-brands fa-github fa-xl"></i></i></i></a></li>
+            <li><a href="https://www.linkedin.com/in/omar-ahmed-205152224/" target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a></li>
         </ul>
     </nav>
     <h3 id="country-name">Select a Country</h3>
     <div id="map"></div>
     <div id="country-modal" class="modal">
         <div class="modal-content">
-            <span class="close">Return to Map</span>
+            <span class="close">&times</span>
             <img id="flag"></img>
             <h2 id="modal-country-name"></h2>
-            <p id="native-name"></p>
-            <p id="capital"></p>
-            <p id="population"></p>
-            <p id="languages-spoken"></p>
-            <p id="region"></p>
+            <div id="country-info">
+                <p id="native-name"></p>
+                <p id="capital"></p>
+                <p id="population"></p>
+                <p id="languages-spoken"></p>
+                <p id="region"></p>
+            </div>
         </div>
     </div>
 </body>

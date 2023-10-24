@@ -9,6 +9,7 @@ class ModalHandler {
         this.languages = document.getElementById("languages-spoken");
         this.region = document.getElementById("region"); 
     }
+
     async openModal(country) {
         try {
             let data = await fetch(`https://restcountries.com/v3.1/name/${country}`)
@@ -31,8 +32,12 @@ class ModalHandler {
             }
 
             this.flag.src = data[0].flags.png;
-
-            this.capital.innerHTML = `Capital: ${data[0].capital}`
+            
+            if (data[0].capital.length > 1) {
+                this.capital.innerHTML = `Capital: ${data[0].capital[data[0].capital.length - 1]}`
+            } else {
+                this.capital.innerHTML = `Capital: ${data[0].capital}`
+            }
 
             if (data[0].population < 1000000 ) {
                 this.population.innerHTML = `Population: ${(data[0].population / 100).toFixed(1)} thousand`
@@ -44,9 +49,9 @@ class ModalHandler {
 
             const languages = Object.values(data[0].languages).join(', ')
             if (Object.values(data[0].languages).length > 1) {
-                this.languages.innerHTML = `Languages spoken: ${languages}`;
+                this.languages.innerHTML = `Languages spoken: ${Object.values(data[0].languages)[0] + ', ' + Object.values(data[0].languages)[1]}`;
             } else {
-                this.languages.innerHTML = `Native language: ${languages}`;
+                this.languages.innerHTML = `Native language: ${Object.values(data[0].languages)}`;
             }
 
             // this.nativeName.innerHTML = `Native Name: ${data[0].name.nativeName.ara.common}`;
@@ -62,10 +67,15 @@ class ModalHandler {
     }
 
     closeModal() {
+        this.refresh()
         const closeButton = document.querySelector(".close");
         closeButton.addEventListener("click", () => {
             this.modal.style.display = "none";
         });
+    }
+    
+    refresh() {
+        this.modal.style.display = "none"
     }
 }
 

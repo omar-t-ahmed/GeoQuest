@@ -5,14 +5,14 @@ import RotationHandler from "./rotation_handler";
 class Globe {
     constructor(selector) {
         this.selector = selector;
-        this.width = d3.select(selector).node().getBoundingClientRect().width;
+        this.width = 500
         this.height = 500;
         this.sensitivity = 75;
 
         this.projection = d3.geoOrthographic()
             .scale(250)
             .center([0, 0])
-            .rotate([0, -30])
+            .rotate([0, -20])
             .translate([this.width / 2, this.height / 2]);
 
         this.initialScale = this.projection.scale();
@@ -59,13 +59,10 @@ class Globe {
     this.eventListeners = new EventListeners(this.svg, this.modalHandler);
     this.loadData();
     this.addEventListeners();
-    this.startRotation();
+    this.rotationHandler.toggleRotation()
 
     let pause = document.getElementById("pause")
-    pause.addEventListener("click", this.stopRotation.bind(this))
-
-    let play = document.getElementById("play")
-    play.addEventListener("click", this.startRotation.bind(this))
+    pause.addEventListener("click", this.toggleRotation.bind(this))
     }
 
     async loadData() {
@@ -92,13 +89,20 @@ class Globe {
         document.getElementById('map').style.filter = 'none';
     }
 
-    startRotation() {
-        this.rotationHandler.startRotation();
+    toggleRotation() {
+        this.rotationHandler.toggleRotation();
+        const pauseIcon = document.querySelector('.fa-solid.fa-pause.fa-xl');
+        const playIcon = document.querySelector('.fa-solid.fa-play.fa-xl');
+        
+        if (pauseIcon) {
+            pauseIcon.classList.remove('fa-pause');
+            pauseIcon.classList.add('fa-play');
+        } else if (playIcon) {
+            playIcon.classList.remove('fa-play');
+            playIcon.classList.add('fa-pause');
+        }
     }
 
-    stopRotation() {
-        this.rotationHandler.stopRotation();
-    }
 }
 
 export default Globe;

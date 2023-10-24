@@ -1,13 +1,4 @@
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-}
+
 
 #modal-country-name {
     color: white;
@@ -18,16 +9,15 @@
 
 
 .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
+    position: fixed;
+    top: 20%;
+    right: 4%;
+    height: 50%;
+    width: 22%;
     padding: 20px;
-    background-color: #333;
-    border: 2px solid blanchedalmond;
+    background-image: linear-gradient(to bottom right, rgb(60, 60, 60), rgb(17, 17, 17));
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 2px -2px rgb(0, 0, 0);
     text-align: center;
     color: #ccc;
 }
@@ -39,28 +29,22 @@
     cursor: pointer;
     padding: 5px 10px;
     color: #d8d8d8;
-    background-color: #555;
-    border: 2px solid black;
-    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
 }
 
 
 #flag {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    position: relative;
+    top: 15px;
     width: 10vw;
     height: 10vh;
-    border: 2px solid #ccc;
-    border-radius: 10px;
 }
 
 h2#modal-country-name {
+    margin-top: 2vw;
     font-size: 32px;
     font-weight: bold;
-    margin: 10px 0;
 }
 
 p {
@@ -69,7 +53,7 @@ p {
     font-weight: bold;
 }
 
-/* Add some specific styles for the data paragraphs */
+
 p#native-name::before,
 p#capital::before,
 p#population::before,
@@ -78,6 +62,27 @@ p#region::before {
     content: attr(data-title);
     font-weight: normal;
     margin-right: 5px;
+}
+
+#country-info {
+    display: grid;
+    place-items: center;
+}
+
+
+#country-info p {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing;
+    animation-duration: 1.5s;
+    animation-timing-function: steps(30, end);
+    animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
 }
 
 
