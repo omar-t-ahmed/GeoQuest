@@ -27,15 +27,40 @@ nav .logo {
     font-size: 18px;
 }
 
-.fa-github, .fa-linkedin, .logo, .fa-magnifying-glass, #pause, #play {
+.fa-github, .fa-linkedin, .logo, #pause, #play {
     color: blanchedalmond;
     font-family: 'Roboto', sans-serif;
     text-shadow: black 2px 3px;
 }
 
-
 .globe-icon {
     margin-top: 1px;
     width: 20px;
     margin-left: 10px;
+}
+
+
+#searchTerm {
+    font-family: 'Roboto', sans-serif;
+    width: 80%;
+    border: 3px solid blanchedalmond;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
+    color: #000000;
+    box-shadow: 5px 5px 1px 1px rgba(0, 0, 0, 0.733);
+}
+
+.searchTerm:focus{
+    color: rgb(0, 0, 0);
+}
+
+
+.wrap{
+    width: 15%;
+    position: absolute;
+    bottom: 3%;
+    left: 10%;
+    transform: translate(-50%, -50%);
 }

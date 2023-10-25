@@ -1,0 +1,38 @@
+#close-initial-modal {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 30px;
+}
+
+h2 {
+    text-shadow: black 2px 3px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.first-p {
+    margin-top: 4vw;
+}
+
+.start-info p {
+    text-shadow: black 2px 3px;
+    font-size: 18px;
+    margin-top: 20px 0;
+    font-weight: bold;
+}
+
+#close-initial-modal {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+}
+
+#close-initial-modal:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}

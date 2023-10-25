@@ -63,6 +63,12 @@ class Globe {
 
     let pause = document.getElementById("pause")
     pause.addEventListener("click", this.toggleRotation.bind(this))
+
+    this.searchInput = document.getElementById("searchTerm")
+    this.searchInput.addEventListener("input", (e) => {
+        const query = e.target.value.trim().toLowerCase();
+        this.filterCountries(query);
+    });
     }
 
     async loadData() {
@@ -103,6 +109,27 @@ class Globe {
         }
     }
 
+    filterCountries(query) {
+        const countryElements = document.querySelectorAll(".country");
+        const matchingCountries = [];
+
+        countryElements.forEach((element) => {
+            const countryName = element.getAttribute("name").toLowerCase();
+            if (countryName.includes(query)) {
+                element.style.display = "block";
+                matchingCountries.push(element);
+            } else {
+                element.style.display = "none";
+            }
+        });
+        if (matchingCountries.length === 1) {
+            const countryToOpen = matchingCountries[0];
+            const countryName = countryToOpen.getAttribute("name");
+            this.modalHandler.openModal(countryName);
+        } else {
+            this.closeModal()
+        }
+    }
 }
 
 export default Globe;

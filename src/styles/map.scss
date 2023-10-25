@@ -6,12 +6,17 @@
     animation: glow 2s linear infinite alternate;
 }
 
-@keyframes glow {
+
+.highlighted-country {
+    animation: flash 1s linear infinite alternate;
+}
+
+@keyframes flash {
     0% {
-        stroke: blanchedalmond;
+        fill: #EC7D10;
     }
     100% {
-        stroke: #ffcc00;
+        fill: #FFBC0A;
     }
 }
 
@@ -22,4 +27,8 @@
 
 .country:hover {
     fill: orange;
+}
+
+#country.highlighted {
+    fill: red;
 }

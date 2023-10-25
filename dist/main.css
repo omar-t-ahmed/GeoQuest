@@ -9,12 +9,17 @@
     animation: glow 2s linear infinite alternate;
 }
 
-@keyframes glow {
+
+.highlighted-country {
+    animation: flash 1s linear infinite alternate;
+}
+
+@keyframes flash {
     0% {
-        stroke: blanchedalmond;
+        fill: #EC7D10;
     }
     100% {
-        stroke: #ffcc00;
+        fill: #FFBC0A;
     }
 }
 
@@ -25,6 +30,10 @@
 
 .country:hover {
     fill: orange;
+}
+
+#country.highlighted {
+    fill: red;
 }
 /*!****************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/country_name_box.scss ***!
@@ -46,8 +55,6 @@
 /*!*****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/modal.scss ***!
   \*****************************************************************************************************/
-
-
 #modal-country-name {
     color: white;
     font-size: 24px;
@@ -59,15 +66,15 @@
 .modal-content {
     position: fixed;
     top: 20%;
-    right: 4%;
-    height: 50%;
+    right: 3%;
+    height: 58%;
     width: 22%;
     padding: 20px;
     background-image: linear-gradient(to bottom right, rgb(60, 60, 60), rgb(17, 17, 17));
     border-radius: 10px;
-    box-shadow: 0 10px 2px -2px rgb(0, 0, 0);
+    box-shadow: 0 10px 2px -2px black;
     text-align: center;
-    color: #ccc;
+    color: #e4e4e4;
 }
 
 .close {
@@ -85,32 +92,24 @@
 #flag {
     position: relative;
     top: 15px;
-    width: 10vw;
+    width: 8vw;
     height: 10vh;
 }
 
 h2#modal-country-name {
+    text-shadow: black 2px 3px;
     margin-top: 2vw;
     font-size: 32px;
     font-weight: bold;
 }
 
 p {
+    text-shadow: black 2px 3px;
     font-size: 18px;
-    margin: 8px 0;
+    margin: 10px 0;
     font-weight: bold;
 }
 
-
-p#native-name::before,
-p#capital::before,
-p#population::before,
-p#languages-spoken::before,
-p#region::before {
-    content: attr(data-title);
-    font-weight: normal;
-    margin-right: 5px;
-}
 
 #country-info {
     display: grid;
@@ -169,17 +168,83 @@ nav .logo {
     font-size: 18px;
 }
 
-.fa-github, .fa-linkedin, .logo, .fa-magnifying-glass, #pause, #play {
+.fa-github, .fa-linkedin, .logo, #pause, #play {
     color: blanchedalmond;
     font-family: 'Roboto', sans-serif;
     text-shadow: black 2px 3px;
 }
 
-
 .globe-icon {
     margin-top: 1px;
     width: 20px;
     margin-left: 10px;
+}
+
+
+#searchTerm {
+    font-family: 'Roboto', sans-serif;
+    width: 80%;
+    border: 3px solid blanchedalmond;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
+    color: #000000;
+    box-shadow: 5px 5px 1px 1px rgba(0, 0, 0, 0.733);
+}
+
+.searchTerm:focus{
+    color: rgb(0, 0, 0);
+}
+
+
+.wrap{
+    width: 15%;
+    position: absolute;
+    bottom: 3%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+}
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/intial_modal.scss ***!
+  \************************************************************************************************************/
+#close-initial-modal {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 30px;
+}
+
+h2 {
+    text-shadow: black 2px 3px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.first-p {
+    margin-top: 4vw;
+}
+
+.start-info p {
+    text-shadow: black 2px 3px;
+    font-size: 18px;
+    margin-top: 20px 0;
+    font-weight: bold;
+}
+
+#close-initial-modal {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+}
+
+#close-initial-modal:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
 }
 
 /*!*************************************************************************************************************************************!*\

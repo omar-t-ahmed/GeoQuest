@@ -2,6 +2,7 @@
 @import url(styles/country_name_box.scss);
 @import url(styles/modal.scss);
 @import url(styles/navbar.scss);
+@import url(styles/intial_modal.scss);
 
 body {
     display: flex;
@@ -10,3 +11,4 @@ body {
     background: radial-gradient(circle, rgb(96, 96, 96), rgb(49, 49, 49));
     margin: 0%
 }
+

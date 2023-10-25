@@ -28,9 +28,17 @@ class EventListeners {
     handleClick(event) {
         const target = event.target;
         if (target.classList.contains("country")) {
-            this.modalHandler.refresh()
+
+            const highlightedCountry = document.querySelector(".highlighted-country");
+            if (highlightedCountry) {
+                highlightedCountry.classList.remove("highlighted-country");
+            }
+            target.classList.add("highlighted-country");
+
+            this.modalHandler.refresh();
             const country = target.getAttribute("name");
             this.modalHandler.openModal(country);
+
         }
     }
 

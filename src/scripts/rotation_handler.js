@@ -6,7 +6,7 @@ class RotationHandler {
         this.path = path;
         this.rotationInterval = null;
     }
-
+    
     toggleRotation() {
         if (this.rotationInterval) {
             clearInterval(this.rotationInterval);

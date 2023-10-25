@@ -1,5 +1,3 @@
-
-
 #modal-country-name {
     color: white;
     font-size: 24px;
@@ -11,15 +9,15 @@
 .modal-content {
     position: fixed;
     top: 20%;
-    right: 4%;
-    height: 50%;
+    right: 3%;
+    height: 58%;
     width: 22%;
     padding: 20px;
     background-image: linear-gradient(to bottom right, rgb(60, 60, 60), rgb(17, 17, 17));
     border-radius: 10px;
-    box-shadow: 0 10px 2px -2px rgb(0, 0, 0);
+    box-shadow: 0 10px 2px -2px black;
     text-align: center;
-    color: #ccc;
+    color: #e4e4e4;
 }
 
 .close {
@@ -37,32 +35,24 @@
 #flag {
     position: relative;
     top: 15px;
-    width: 10vw;
+    width: 8vw;
     height: 10vh;
 }
 
 h2#modal-country-name {
+    text-shadow: black 2px 3px;
     margin-top: 2vw;
     font-size: 32px;
     font-weight: bold;
 }
 
 p {
+    text-shadow: black 2px 3px;
     font-size: 18px;
-    margin: 8px 0;
+    margin: 10px 0;
     font-weight: bold;
 }
 
-
-p#native-name::before,
-p#capital::before,
-p#population::before,
-p#languages-spoken::before,
-p#region::before {
-    content: attr(data-title);
-    font-weight: normal;
-    margin-right: 5px;
-}
 
 #country-info {
     display: grid;

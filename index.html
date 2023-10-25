@@ -22,15 +22,32 @@
             <img class="globe-icon" src="assets/64px-Blank_globe.svg.png" alt="globe icon blue">
         </div>
         <ul>
-            <li id="search-bar">
-                <label for="search"><i class="fa-solid fa-magnifying-glass fa-lg"></i></label>
-                <!-- <input type="search" id="search"> -->
-            </li>
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" id="searchTerm" placeholder="Find a Country">
+                </div>
+            </div>
             <li id="pause"><i class="fa-solid fa-pause fa-xl"></i></li>
-            <li><a href="https://github.com/omar-t-ahmed" target="_blank"><i class="fa-brands fa-github fa-xl"></i></i></i></a></li>
-            <li><a href="https://www.linkedin.com/in/omar-ahmed-205152224/" target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a></li>
+            <li><a href="https://github.com/omar-t-ahmed" ><i class="fa-brands fa-github fa-xl"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/omar-ahmed-205152224/" ><i class="fa-brands fa-linkedin fa-xl"></i></a></li>
         </ul>
     </nav>
+    <div id="initial-modal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to GeoQuest</h2>
+            <div class="start-info">
+                <p class="first-p">In GeoQuest users can click on a specific country on the globe, and upon clicking, 
+                    a modal window will appear displaying information about that country. 
+                <p>The pause button on the top right can be used to stop and start the 
+                    rotation of the globe </p>
+                <p>The search bar on the bottom left can be used to 
+                    filter out countries by name </p>
+            </div>
+            
+            <button id="close-initial-modal">Start Exploring</button>
+        </div>
+    </div>
+
     <h3 id="country-name">Select a Country</h3>
     <div id="map"></div>
     <div id="country-modal" class="modal">
@@ -39,10 +56,11 @@
             <img id="flag"></img>
             <h2 id="modal-country-name"></h2>
             <div id="country-info">
-                <p id="native-name"></p>
+                <p id ="native-name"></p>
+                <p id="languages-spoken"></p>
                 <p id="capital"></p>
                 <p id="population"></p>
-                <p id="languages-spoken"></p>
+                <p id="currency"></p>
                 <p id="region"></p>
             </div>
         </div>
