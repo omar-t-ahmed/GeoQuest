@@ -2,7 +2,7 @@
 
 [GeoQuest](https://omar-t-ahmed.github.io/GeoQuest/) is a 3D data visualization that renders an interactive globe. Users can click on a specific country on the globe, and upon clicking, a modal window will appear displaying detailed information about that country. This project aims to provide an engaging and educational experience, allowing users to explore and learn about different countries and their key statistics by interacting with the globe. It serves as a user-friendly platform for accessing geographical and demographic data in an interactive and visually appealing manner.
 
-![ ](./assets/globe_spin.gif)
+![ ](./assets/globe-spin..gif)
 
 # Functionality:
 
@@ -49,7 +49,7 @@ Users can:
 
 ### Handling drag
 
-* To enable this feature, the code also uses the D3 library's drag behavior, allowing users to drag the globe with their cursor. The handleDrag function is triggered when a drag event is detected. It calculates how much the globe should rotate based on the user's dragging movement and sensitivity settings. 
+* To enable this feature I used the D3 library's drag behavior, which allows users to drag the globe with their cursor. The handleDrag function is triggered when a drag event is detected. It calculates how much the globe should rotate based on the user's dragging movement and sensitivity settings. 
 
 * The current rotation of the globe, represented by latitude and longitude angles, is obtained using the projection. Then, the sensitivity parameter and the projection's scale are used to adjust the rotation angles. The calculated rotation is applied to the projection settings, and a new path is created based on the updated projection. The globe's path elements are updated to reflect the changes in rotation.
 
