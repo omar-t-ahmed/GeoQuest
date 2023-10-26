@@ -207,10 +207,6 @@ nav .logo {
 /*!************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/intial_modal.scss ***!
   \************************************************************************************************************/
-#close-initial-modal {
-    font-family: 'Roboto', sans-serif;
-    margin-top: 30px;
-}
 
 h2 {
     text-shadow: black 2px 3px;
@@ -230,6 +226,8 @@ h2 {
 }
 
 #close-initial-modal {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 30px;
     font-size: 16px;
     text-decoration: none;
     color: #000;
