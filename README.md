@@ -2,7 +2,7 @@
 
 [GeoQuest](https://omar-t-ahmed.github.io/GeoQuest/) is a 3D data visualization that renders an interactive globe. Users can click on a specific country on the globe, and upon clicking, a modal window will appear displaying detailed information about that country. This project aims to provide an engaging and educational experience, allowing users to explore and learn about different countries and their key statistics by interacting with the globe. It serves as a user-friendly platform for accessing geographical and demographic data in an interactive and visually appealing manner.
 
-[Spin](./assets/globe-spin_kOdMVcUu.mp4)
+![Spin](./assets/globe-spin_kOdMVcUu.mp4)
 
 # Functionality:
 
