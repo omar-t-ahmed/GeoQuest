@@ -69,6 +69,12 @@
     color: #e4e4e4;
 }
 
+@media (max-width: 1200px) {
+    .modal-content {
+        display: none;
+    }
+}
+
 .close {
     position: absolute;
     top: 10px;
