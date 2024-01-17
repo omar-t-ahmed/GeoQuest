@@ -34,3 +34,33 @@ h2 {
     top: 5px;
     left: 5px;
 }
+
+
+// @media screen and (max-width: 150em){
+//     #initial-modal {
+//         display: none;
+//     }
+// }
+
+.start-info {
+    max-width: 50vw; /* Set maximum width to 50% of the viewport width */
+    overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+}
+
+#initial-modal {
+    max-width: 50vw; /* Set maximum width to 50% of the viewport width */
+    overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+}
+
+/* Additional styles to make the scrollbar look better */
+.start-info::-webkit-scrollbar {
+    width: 8px;
+}
+
+.start-info::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+.start-info::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
